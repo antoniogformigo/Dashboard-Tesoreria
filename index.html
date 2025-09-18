@@ -113,7 +113,13 @@
         </div>
       </div>
 
-
+      <!-- Doble eje mensual -->
+      <div class="bg-white p-6 rounded-2xl shadow-lg">
+        <div class="flex items-center justify-between mb-2">
+          <h3 class="text-xl font-semibold text-slate-700">Evolución mensual de Tesorería</h3>
+        </div>
+        <div id="dual-container" class="chart-box"><canvas id="chart-dual"></canvas></div>
+      </div>
     </section>
 
     <!-- PAGE: CASH-FLOW ESPAÑA -->
@@ -304,6 +310,7 @@ function groupES(n){
   }
   return sign + out;
 }
+
     let formatMode = 'k';
     function fmtMode(n){ const val = Number(n); if(!isFinite(val)) return ''; if(formatMode==='k'){ const k = Math.round(val/1000); return groupES(k)+'k'; } return groupES(val); }
     function tickMode(v){ return fmtMode(Number(v)); }
